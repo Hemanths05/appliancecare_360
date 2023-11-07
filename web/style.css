@@ -137,7 +137,7 @@ li{
 .bg_image_section{
     width: 100%;
     height: 100vh;
-    background: var(--linear-background), url("/image/2106.q703.016.S.m004.c10.household\ appliance\ realistic.jpg") no-repeat;
+    background: var(--linear-background), url("/web/image/2106.q703.016.S.m004.c10.household\ appliance\ realistic.jpg") no-repeat;
     background-position: center center;
     background-size: cover;
 }
