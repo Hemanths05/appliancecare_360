@@ -11,66 +11,26 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="login-cpy.css">
-   
-
-  
-   
-    <title>Appliancecare360</title>
+   <title>Appliancecare360</title>
 </head>
 <body>
-    <style>
-            .dropdown {
-     
-      display: inline-block;
-      background-color: transparent;
-    }
-
-    .dropdown-content {
-      display:none;
-      position: absolute;
-      min-width: 60px;
-      background-color: rgba(0, 0, 0, 0.0);
-
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    .dropdown-content button {
-      color: #a7a7a7;
-      border: none;
-background: none;
-      padding: 12px 16px;
-     
-    }
-    .dropdown-content button:hover {
-      color: rgb(226, 72, 6, 1);
-      
-    }
-
-    </style>
     <div class="main_section">
         <div class="bg_image_section">
             <div class="nav_section">
-                <a href="index.html" class="logo_link">
-                    Appliancecare360  
-                </a>
+                <a href="index.html" class="logo_link">Appliancecare360</a>
                 <ul>
                     <li><a href="#" class="nav_link active">Home</a></li>
                     <li><a href="#about_section" class="nav_link">About Us</a></li>
                     <li><a href="#popular_destination" class="nav_link">services</a></li>
                     <li><a href="#blog_section" class="nav_link">Blogs</a></li>
                     <li><a href="#contact_section" class="nav_link">Contact Us</a></li>
-                   <li>
                     <div class="dropdown" >
                       <button class="open-button" style="background-color: transparent;  border: none; ">Login</button>
                       <div class="dropdown-content" >
-                          <button class="open-button" onclick="openForm()" class="nav_link"  >Customer</button>
-                          <button class="open-button" onclick="openForm()" class="nav_link" >Login</button></li>
+                          <button class="open-button nav_link" onclick="openForm()"   >Customer</button>
+                          <button class="open-button nav_link" onclick="openForm()" >Login</button></li>
                      </div> 
-                    </div> 
-                </li>
+                    </div>
                 </ul>
                 <div id="toggleIcon">
                     <i class="fa-solid fa-bars-staggered"></i>
@@ -86,42 +46,7 @@ background: none;
                 </div>
             </div>
         </div>
-        
-
-
-
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-
-   .nav_section li button:hover{
-    color: var(--secondary);
-}
-    .open-button {
-
-        background-color: transparent; 
-        color:  #a7a7a7;
-        border: none;
-        transition: 0.5s ease-out;
-        display: inline-block;
-    font-size: 1.2rem;
-    font-weight: 500;
-    padding: 0 8px;
-    letter-spacing: 0.008rem;
-}
-    .form-popup {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  top: 120px;; 
-    right:20%; 
-    bottom: 40px;
-        width:820px;
-
-}
-</style>
-
-        <div class="form-popup" id="myForm">
-       
+ <div class="form-popup" id="myForm">
         <div class="container" id="container">
                 <div class="form-container sign-up">
                     <form>
@@ -138,7 +63,6 @@ background: none;
                         <input type="email" placeholder="Email">
                         <input type="password" placeholder="Password">
                         <button>Sign Up</button>
-                       <!-- <button type="button" class="btn cancel" onclick="closeForm()">Close</button>-->
                         <button class="btn cance" aria-label="Close alert" type="button" data-close onclick="closeForm()"
                         style="background-color: transparent; color:rgb(226, 72, 6, 1); float: right;position: absolute;
                         top: -10px;
@@ -151,7 +75,6 @@ background: none;
                     
                     <form>
                         <h1>Sign In</h1>
-                    <!--   <div class="close-btn" onclick="closeForm()">&times;</div>--> 
                         <div class="social-icons">
                             <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
                             <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
@@ -163,7 +86,6 @@ background: none;
                         <input type="password" placeholder="Password">
                         <a href="#">Forget Your Password?</a>
                         <button>Sign In</button>
-                        <!--<button type="button" class="btn cancel" onclick="closeForm()">Close</button>-->
                         <button class="btn cance" aria-label="Close alert" type="button" data-close onclick="closeForm()"
                         style="background-color: transparent; color:rgb(226, 72, 6, 1); float: right;position: absolute;
                         text-align: left;	
@@ -189,38 +111,6 @@ background: none;
                 </div>
             </div>
         </div>
-        <script src="script.js"></script>
-        <script>
-            function openForm() {
-              document.getElementById("myForm").style.display = "block";
-            }
-            
-            function closeForm() {
-              document.getElementById("myForm").style.display = "none";
-            }
-            </script>
-        
-
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-          
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <div class="about_section" id="about_section">
             <div class="image_section" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
                 <img src="/web/image/all.avif" alt="About Image" class="about_img">
@@ -332,6 +222,10 @@ background: none;
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="./main.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>

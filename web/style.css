@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    
 }
 a{
     text-decoration: none;
@@ -1036,7 +1037,7 @@ li{
     }
     .about_title {
         font-size: 1.0rem;
-    }
+    }           
     .about_desc {
         font-size: 0.890rem;
         line-height: 1.1rem;
@@ -1100,5 +1101,67 @@ li{
         padding: 30px 30px 30px 50px;
         right: 30px;
     }
+
+}
+
+/* for dropdown button in nav login */
+.dropdown {
+    position:relative;
+display: inline-block;
+background-color: transparent;
+}
+
+.dropdown-content {
+display:none;
+position: absolute;
+min-width: 160px;
+background-color: rgba(0, 0, 0, 0.0);
+z-index: 1;
+
+}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+.dropdown-content button {
+color: #a7a7a7;
+border: none;
+background: none;
+padding: 12px 16px;
+
+}
+.dropdown-content button:hover {
+color: rgb(226, 72, 6, 1);
+
+}
+
+
+/* popup form style */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+.nav_section li button:hover{
+ color: var(--secondary);
+}
+ .open-button {
+
+     background-color: transparent; 
+     color:  #a7a7a7;
+     border: none;
+     transition: 0.5s ease-out;
+     display: inline-block;
+ font-size: 1.2rem;
+ font-weight: 500;
+ padding: 0 8px;
+ letter-spacing: 0.008rem;
+}
+ .form-popup {
+display: none;
+position: fixed;
+bottom: 0;
+top: 120px;; 
+ right:20%; 
+ bottom: 40px;
+     width:820px;
 
 }
