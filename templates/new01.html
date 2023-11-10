@@ -1,0 +1,118 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appliancecare360 </title>
+</head>
+    <script type="text/javascript">
+        var citiesByState = {
+            Coimbatore: ["LG", "SAMSUNG"],
+            Chennai: ["LG", "SAMSUNG"],
+           
+        };
+        
+        function makeSubmenu(value) {
+            if (value.length == 0) document.getElementById("citySelect").innerHTML = "<option></option>";
+            else {
+                var citiesOptions = "";
+                for (cityId in citiesByState[value]) {
+                    citiesOptions += "<option>" + citiesByState[value][cityId] + "</option>";
+                }
+                document.getElementById("citySelect").innerHTML = citiesOptions;
+            }
+        }
+        
+        function displaySelected() {
+            var country = document.getElementById("countrySelect").value;
+            var city = document.getElementById("citySelect").value;
+        
+            if (country === "Coimbatore" && city === "LG") {
+                document.getElementById("iframeContainer").innerHTML = '<iframe src="lg.html"></iframe>';
+            } else if (country === "Coimbatore" && city === "SAMSUNG") {
+                document.getElementById("iframeContainer").innerHTML = '<iframe src="samsung.html"></iframe>';
+            }
+            else if (country === "Chennai" && city === "LG") {
+                document.getElementById("iframeContainer").innerHTML = '<iframe src="lg.html"></iframe>';
+            } else if (country === "Chennai" && city === "SAMSUNG") {
+                document.getElementById("iframeContainer").innerHTML = '<iframe src="samsung.html"></iframe>';
+            } else {
+                document.getElementById("iframeContainer").innerHTML = ''; // Clear iframe content
+                alert(country + "\n" + city);
+            }
+        }
+        
+        function resetSelection() {
+            document.getElementById("countrySelect").selectedIndex = 0;
+            document.getElementById("citySelect").selectedIndex = 0;
+            document.getElementById("iframeContainer").innerHTML = ''; // Clear iframe content
+        }
+        </script>
+<style>
+    :root{
+        --bg-color: #e2e2e2;
+        --primary: #1c1c1c;
+        --secondary: #e24806;
+        --tertiary: #f4f4f4;
+        --fourth : #a7a7a7;
+        --linear-background: linear-gradient(45deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65),rgba(0, 0, 0, 0.54));
+        --linear-background-destination: linear-gradient(to bottom,rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.78),rgba(0, 0, 0, 0.80));
+    }
+    .nav_section{
+        width: 100%;
+        height: 60px;
+        background: rgba(0, 0, 0, 0.12);
+        backdrop-filter: blur(10.5px);
+        -webkit-backdrop-filter: blur(10.5px);
+        padding: 10px 100px;
+        border-bottom: 1px solid rgba(65, 65, 65, 0.7);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+    }
+    .logo_link{
+        font-size: 1.8rem;
+        font-weight: bold;
+        letter-spacing: 0.01rem;
+        color: var(--secondary);
+        line-height: 50px;
+    }
+    iframe {
+        width: 90%;
+        height: 1000px;
+        border: none;
+        
+    }
+    .location_box{
+        margin-top: 40px;
+        margin-left: 500px;
+    }
+
+
+</style>
+<body onload="resetSelection()">
+    <div class="nav_section">
+        <a href="index.html" class="logo_link">
+            Appliancecare360  <i class="fa-solid fa-video"></i>
+        </a>
+        <div id="toggleIcon">
+            <i class="fa-solid fa-bars-staggered"></i>
+        </div>
+           <div class="location_box">
+            <select class="country" id="countrySelect" size="1" onchange="makeSubmenu(this.value)">
+            <option value="" disabled selected>Choose City</option>
+            <option>Coimbatore</option>
+            <option>Chennai</option>
+            </select>
+            <select id="citySelect" size="1" >
+            <option value="" disabled selected>Choose Brand</option>
+            <option></option>
+            </select>
+            <br><br>
+            <button onclick="displaySelected()">Show Shops
+            </button>
+         </div>
+            
+            <div id="iframeContainer"></div>
+</body>
+</html>
