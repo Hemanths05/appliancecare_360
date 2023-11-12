@@ -27,8 +27,8 @@
                     <div class="dropdown" >
                       <button class="open-button" style="background-color: transparent;  border: none; ">Login</button>
                       <div class="dropdown-content" >
-                          <button class="open-button nav_link" onclick="openForm()"   >Customer</button>
-                          <button class="open-button nav_link" onclick="openForm()" >Login</button></li>
+                          <button class="open-button nav_link" onclick="openForm('Customer')"   >Customer</button>
+                          <button class="open-button nav_link" onclick="openForm('Service')" >Service</button></li>
                      </div> 
                     </div>
                 </ul>
@@ -49,7 +49,7 @@
  <div class="form-popup" id="myForm">
         <div class="container" id="container">
                 <div class="form-container sign-up">
-                    <form  method="post" action="{{ url_for('login') }}">
+                    <form  method="post" action="{{ url_for('signup') }}">
                         <h1>Create Account</h1>
                     
                       <i class="uil uil-times"></i>
@@ -59,6 +59,7 @@
                             <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                         </div>
                         <span>or use your email for registeration</span>
+                        <input type="hidden" id="userType" name="userType" value="">
                         <input type="text" placeholder="Name" id="username"  name="username">
                         <input type="email" placeholder="Email" id="email"  name="email">
                         <input type="password" placeholder="Password" id="password"  name="password">
@@ -73,7 +74,7 @@
                 </div>
                 <div class="form-container sign-in">
                     
-                    <form  method="post" action="{{ url_for('login') }}">
+                    <form  method="post" action="{{ url_for('signin') }}">
                         <h1>Sign In</h1>
                         <div class="social-icons">
                             <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
@@ -82,7 +83,7 @@
                             <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                         </div>
                         <span>or use your email password</span>
-                        <input type="text" placeholder="Name" id="username"  name="username">
+                        <input type="hidden" id="userType1" name="userType1" value="">
                         <input type="email" placeholder="Email" id="email"  name="email" >
                         <input type="password" placeholder="Password" id="password"  name="password">
                         <a href="#">Forget Your Password?</a>
