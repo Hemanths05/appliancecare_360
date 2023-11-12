@@ -9,7 +9,10 @@ registerBtn.addEventListener('click', () => {
 loginBtn.addEventListener('click', () => {
     container.classList.remove("active");
 });
-function openForm() {
+function openForm(userType) {
+  console.log(userType);
+    document.getElementById('userType').value=userType;
+    document.getElementById('userType1').value=userType;
     document.getElementById("myForm").style.display = "block";
   }
   
