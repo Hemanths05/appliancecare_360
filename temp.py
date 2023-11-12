@@ -17,7 +17,7 @@ def get_database_details():
     )
     return connection
 
-def store_data(user):
+def fetch_data(user):
     connection=get_database_details()
     # Create a cursor object to interact with the database
     cursor = connection.cursor()
@@ -28,13 +28,22 @@ def store_data(user):
 
     # Fetch the results
     results = cursor.fetchall()
-
-    # Print the results
-
-    # Close the cursor and connection when done
     cursor.close()
     connection.close()
     if not results:
         return False
     else:
         return True
+
+def store_data(user):
+    connection=get_database_details()
+    cursor = connection.cursor()
+    name=user.name
+    password=user.password
+    email=user.email
+    userType=user.user_type
+    query="INSERT INTO `user_details` (`name`,`email`,`password`,`userType`) VALUES(%s, %s, %s, %s)"
+    cursor.execute(query, (name,email,password,userType,))
+    connection.commit()
+    cursor.close()
+    connection.close()
