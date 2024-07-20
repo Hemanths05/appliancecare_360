@@ -47,3 +47,10 @@ def store_data(user):
     connection.commit()
     cursor.close()
     connection.close()
+
+def isUserAvailable(user):
+    connection=get_database_details()
+    cursor=connection.cursor()
+    email=user.email
+    query="SELECT name from user_details where ('email')"
+    

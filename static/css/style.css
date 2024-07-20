@@ -288,6 +288,20 @@ li{
     box-shadow: 5px 5px 10px rgba(68, 27, 5, 0.12);
     border: 1px solid rgba(143, 143, 143);
 }
+
+.content1_section{
+    height: auto;
+    border-radius: 4px;
+    right: 100px;
+    background: var(--fourth);
+    align-items: flex-start;
+    justify-content: start;
+    flex-direction: column;
+    row-gap: 1.1rem;
+    padding: 30px 30px 30px 30px;
+    box-shadow: 5px 5px 10px rgba(68, 27, 5, 0.12);
+    border: 1px solid rgba(143, 143, 143);
+}
 .about_title{
     font-size: 1.9rem;
     font-weight: 600;

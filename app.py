@@ -16,7 +16,11 @@ def signup():
     email = request.form['email']
     user_type = request.form['userType']
     user=User(username,email,password,user_type)
-    isUserAvailable=store_data(user)
+    isUserAvailable=fetch_data(user)
+    if(not isUserAvailable):
+        store_data(user)
+    else:
+        return "user exits"
     return "singup"
 
 @app.route('/signin', methods=['POST'])
@@ -26,7 +30,10 @@ def signin():
     user_type = request.form['userType1']
     user=User(email,password,user_type)
     isUserAvailable=fetch_data(user)
-    return "signin"
+    if isUserAvailable:
+        return "Signin successful."
+    else:
+        return "User does not exist. Create an account."
 
 if __name__ == '__main__':
      app.run(debug=True)

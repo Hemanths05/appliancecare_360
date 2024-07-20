@@ -19,3 +19,7 @@ function openForm(userType) {
   function closeForm() {
     document.getElementById("myForm").style.display = "none";
   }
+
+
+  // document.alert
+  // toggle to sinup     registerBtn```

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #f8f8f8;
+      padding: 10px;
+      text-align: center;
+    }
+
+    #restaurant-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: 50px;
+      padding: 20px;
+    }
+
+    .restaurant {
+      width: 300px;
+      margin: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .restaurant img {
+      width: 80%;
+      height: 200px;
+      margin-left: 30px;
+        margin-right: auto;
+        margin-bottom: -20px;
+    }
+
+    .restaurant-details {
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="restaurant-list">
+  </div>
+
+  <script>
+    const restaurants = [
+      { name: 'Service_Person1', image: '2919906.png', description: 'The service was good.' },
+      { name: 'Service Person2', image: '2919906.png', description: 'The service was bad.' },
+    ];
+
+    function displayRestaurants() {
+      const restaurantList = document.getElementById('restaurant-list');
+
+      restaurants.forEach(restaurant => {
+        const restaurantItem = document.createElement('div');
+        restaurantItem.classList.add('restaurant');
+
+        const img = document.createElement('img');
+        img.src = restaurant.image;
+        img.alt = restaurant.name;
+
+        const details = document.createElement('div');
+        details.classList.add('restaurant-details');
+        details.innerHTML = `<h2>${restaurant.name}</h2><p>${restaurant.description}</p>`;
+
+        restaurantItem.appendChild(img);
+        restaurantItem.appendChild(details);
+        restaurantList.appendChild(restaurantItem);
+      });
+    }
+
+    // Display restaurants on page load
+    window.onload = displayRestaurants;
+  </script>
+</body>
+</html>
